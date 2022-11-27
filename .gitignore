@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 src/main/resources/mybatis-config.xml
+.gitignore
 
 ### IntelliJ IDEA ###
 /.idea
