@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
         <h1>欢迎注册</h1>
         <span>已有帐号？</span> <a href="login.html">登录</a>
     </div>
-    <form id="reg-form" action="/brand-demo/registerServlet" method="post">
+    <form id="reg-form" action="<c:url value="/registerServlet"/>" method="post">
 
         <table>
 
@@ -41,7 +42,7 @@
                 <td>验证码</td>
                 <td class="inputs">
                     <input name="checkCode" type="text" id="checkCode">
-                    <img id="checkCodeImg" src="/brand-demo/checkCodeServlet">
+                    <img id="checkCodeImg" src="<c:url value="/checkCodeServlet"/>">
                     <a href="#" id="changeImg" >看不清？</a>
                 </td>
             </tr>
@@ -58,7 +59,7 @@
 
 <script>
     document.getElementById("changeImg").onclick = function () {
-        document.getElementById("checkCodeImg").src = "/brand-demo/checkCodeServlet?"+new Date().getMilliseconds();
+        document.getElementById("checkCodeImg").src = "/checkCodeServlet?"+new Date().getMilliseconds();
     }
 
 </script>

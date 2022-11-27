@@ -10,7 +10,7 @@ import java.io.IOException;
 
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
-    private UserService service = new UserService();
+    private final UserService service = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,7 +23,6 @@ public class LoginServlet extends HttpServlet {
 
         //2. 调用service查询
         User user = service.login(username, password);
-
         //3. 判断
         if(user != null){
             //登录成功，跳转到查询所有的BrandServlet

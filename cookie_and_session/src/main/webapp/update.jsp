@@ -10,7 +10,7 @@
 </head>
 <body>
 <h3>修改品牌</h3>
-<form action="/brand-demo/updateServlet" method="post">
+<form action="/updateServlet" method="post">
 
     <%--隐藏域，提交id--%>
     <input type="hidden" name="id" value="${brand.id}">

@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -18,7 +20,7 @@ public class CheckCodeUtil {
 
 
     public static void main(String[] args) throws IOException {
-        OutputStream fos = new FileOutputStream("d://a.jpg");
+        OutputStream fos = Files.newOutputStream(Paths.get("test/a.jpg"));
         String checkCode = CheckCodeUtil.outputVerifyImage(100, 50, fos, 4);
 
         System.out.println(checkCode);

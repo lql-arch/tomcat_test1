@@ -27,7 +27,7 @@
 
 
     <c:forEach items="${brands}" var="brand" varStatus="status">
-        <tr align="center">
+        <tr text-align="center">
             <%--<td>${brand.id}</td>--%>
             <td>${status.count}</td>
             <td>${brand.brandName}</td>
