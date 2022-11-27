@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 src/main/resources/mybatis-config.xml
 .gitignore
+cookie_and_session/src/main/resources/mybatis-config.xml
 
 ### IntelliJ IDEA ###
 /.idea
