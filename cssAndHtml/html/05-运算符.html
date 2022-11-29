@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    var age1 = 20
+    var age2 = "20"
+    document.write((age1 == age2)+"\n")//true,会先转换类型
+    document.write((age1 === age2) + "\n")//false，比较类型
+
+
+    //string->number(非数字就转为NaN)
+    var str = +"20";
+    var str2 = +"abc"
+    var t = parseInt("20")
+    document.write(str,'\t',str2,'\t',t,"\n");
+    alert(t === str)
+    document.write("--------------------------------------------")
+    //boolean->number
+    var flag = +true
+    document.write(flag,"\n")
+    document.write("--------------------------------------------")
+
+    //number->boolean : 0 和NaN为false,其他为true
+    var flag = 3
+    if (flag){
+      document.write(true)
+    }else{
+      document.write(false)
+    }
+    document.write("--------------------------------------------")
+    //string->boolean ： 空字符串为false,有字符为true
+    var flag = "123"
+    if (flag){
+      document.write(true)
+    }else {
+      document.write(false)
+    }
+    document.write("--------------------------------------------")
+    //null->boolean ：false
+    var flag = null
+    //undefined->boolean : false
+    var flag = undefined
+    if (flag){//健壮性判断
+      document.write(true)
+    }else {
+      document.write(false)
+    }
+  </script>
+</body>
+</html>

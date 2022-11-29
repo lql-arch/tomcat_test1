@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件监听</title>
+<!--  <link href="css" rel="stylesheet">-->
+</head>
+<body>
+  <input type="button" value="点点" onclick="on()">
+  <input type="button" value="点点" id="aaa">
+
+  <form id="register" action="#" method="post">
+    <table>
+      <tr>
+        <td>username</td>
+        <td class="inputs">
+          <label for="username"></label> #for 与 id对应
+          <input type="text" name="username" placeholder="请输入" id="username"/>
+          <br>
+          <span id="username_err" class="err_msg" style="display: none">username格式有误</span>
+        </td>
+      </tr>
+    </table>
+    <input type="submit" value="提交">
+  </form>
+
+
+<script>
+  function on(){
+    alert("on")
+  }
+
+  document.getElementById("aaa").onclick = function () {
+    alert("off")
+  }
+
+  //表单验证
+  function username() {
+    let username = document.getElementById("username");
+    username.onblur = function () {
+      let userName = username.value.trim()
+      const reg = /^\w{6,12}$/;//6<length<12
+      const flag = reg.test(userName);
+      if (!flag) {
+        document.getElementById("register").onsubmit = function () {
+          document.getElementById("username_err").style.display = ""
+          return false//不提交
+        }
+      } else {
+        document.getElementById("register").onsubmit = function () {
+          document.getElementById("username_err").style.display = "none"
+          return on//提交
+        }
+      }
+    }
+    return flag
+  }
+
+  username()
+
+
+</script>
+
+</body>
+</html>

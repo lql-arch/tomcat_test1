@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  {
+    var test = 20 //1.全局变量
+    var  test = 30 //2.变量可以重复定义
+    let a = 100 //只在当前代码块中有效 ,不能重复
+    test = "zhangsan"
+  }
+  var t = null
+  document.write(typeof t+"\n")
+  //类型：number，string.null,undefined,object(引用),boolean
+  alert(test)
+  document.write(typeof test)
+
+  const a= 10//常量，不能改变
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+<!--      java     -->
+<!--  <html>:Jsoup -->
+<!--  <xml>:MOD4J  -->
+  Document：整个文档对象
+  Element：元素对象
+  Attribute：属性对象
+  Text：文本对象
+  Comment:注释对象
+<div id="light">asd</div>
+
+<script>
+  var img = document.getElementById("light")
+  let selection = document.getSelection();
+  // alert(selection)
+  //alert(img)
+  document.write(img.innerText)
+  //style:css样式
+  //innerHTML：设置元素内容
+  img.style.color = "red"
+  img.innerText = "asdasd"
+  img.innerHTML = "<div id = \"light1\"> asd </div>"
+</script>
+
+<div>
+  ...
+</div>
+</body>
+</html>

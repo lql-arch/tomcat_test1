@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        //1.Array
+        //变长变类型
+        const array = new Array(1, 2, 3);
+        let arr = [1, 2, 3];
+        // alert(array[0]+arr[1])
+        // document.write(arr)
+        arr.push(4)
+        arr[10] = 10
+        arr[5] = "hello"
+        arr.pop()
+        // alert(arr)
+
+        //2.String
+        var string = new String("qa")
+        var string1 = "  qa  "
+        // document.write(string1.length)
+        // alert(string1.trim())//去除前后字符串
+
+        //3.自定义对象
+        var student={
+            name:"zhangsan",
+            age:123,
+            eat:function () {
+                document.write("eat...")
+            }
+        }
+        student.eat()
+
+    </script>
+</body>
+</html>
