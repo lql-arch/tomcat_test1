@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link href="css/register.css" rel="stylesheet">
+</head>
+<body>
+<div id="RegisterDiv">
+    <form action="/registerServlet" method="post" id="form">
+        <h1 id="registerMsg">REGISTER</h1>
+        <table>
+            <tr>
+                <td><label for="username">用户名</label></td>
+                <td class="inputs">
+                    <input id="username" name="username" type="text">
+                    <br>
+                    <span id="username_err" class="err_msg" style="display: none">用户名已存在</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">密码</label></td>
+                <td class="inputs">
+                    <input id="password" name="password" type="password">
+                    <br>
+                    <span id="password_err" class="err_msg" style="display: none">密码已存在</span>
+                </td>
+            </tr>
+
+        <div id="subDiv">
+            <input type="submit" class="button" value="register">
+            <input type="reset" class="button" value="reset">
+            <a href="login.html">点击返回登陆</a>
+        </div>
+        </table>
+    </form>
+
+</div>
+
+<script>
+    //1.绑定失去焦点事件
+    document.getElementById("username").onblur = function () {
+        //2.发送ajax请求
+        var username = this.value;
+        //2.1创建核心对象
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        } else {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        //2.2.发送请求
+        xmlhttp.open("GET","http://localhost:8082/LoginServlet?username="+username,true);
+        xmlhttp.send();
+        //2.3.获取请求
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                if(this.responseText == "true"){
+                    document.getElementById("username_err").style.display = "";
+                }else{
+                    document.getElementById("username_err").style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

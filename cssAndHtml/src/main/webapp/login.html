@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div id="loginDiv">
+    <form id="register" action="#" method="post">
+        <table>
+            <tr>
+                <td><label for="username">username</label></td>
+                <td class="inputs">
+                    <input type="text" name="username" placeholder="请输入" id="username"/>
+                    <br>
+                    <span id="username_err" class="err_msg" style="display: none">username错误</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">密码</label></td>
+                <td class="inputs">
+                    <input id="password" name="password" type="password">
+                    <br>
+                    <span id="password_err" class="err_msg" style="display: none">密码错误</span>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="提交">
+    </form>
+</div>
+<script src="axios-0.18.0.js"></script>
+<script>
+    document.getElementById("username").onblur = function () {
+        const username = this.value;
+        axios.post("http://localhost:8082/LoginServlet","username="+username).then(function (resp) {
+            if (resp.data){
+                document.getElementById("username_err").style.display = "";
+            }else{
+                document.getElementById("username_err").style.display = "none";
+            }
+        })
+
+    }
+</script>
+</body>
+</html>
