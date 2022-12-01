@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-if</title>
+</head>
+<body>
+ v-if条件性渲染
+ v-show根据条件展示元素,切换display(style:display=none)
+<hr>
+<div id="app">
+    <div v-if="count == 3">div1</div>
+    <div v-else-if="count == 4">div2</div>
+    <div v-else>div3</div>
+    <div>
+        <input v-model="count">
+    </div>
+
+    <hr>
+    <div v-show="count == 3">div v-show</div>
+    <br>
+
+    <input v-model="count">
+
+</div>
+  <script src="js/vue.js"></script>
+
+  <script>
+    new Vue({
+      el:"#app",
+      data(){
+        return {
+          username: "",
+          url:"https://www.baidu.com",
+          count : 3
+        }
+      },
+      methods:{
+        show(){
+          alert("我是yeyr2")
+        }
+      }
+    });
+  </script>
+</body>
+</html>

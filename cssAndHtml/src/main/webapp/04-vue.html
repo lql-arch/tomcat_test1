@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+</head>
+<body>
+<div id="app">
+    <label for="username">app</label>
+    <input name="username" v-model="username" id="username">
+<!--    插值表达式-->
+    {{username}}
+
+</div>
+
+<script src="js/vue.js"></script>
+<!--    使用MVVM架构，双向绑定view和model。-->
+<!--    Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript 框架。-->
+<!--    它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。-->
+<!--    使用环境：-->
+<!--    无需构建步骤，渐进式增强静态的 HTML-->
+<!--    在任何页面中作为 Web Components 嵌入-->
+<!--    单页应用 (SPA)-->
+<!--    全栈 / 服务端渲染 (SSR)-->
+<!--    Jamstack / 静态站点生成 (SSG)-->
+<!--    开发桌面端、移动端、WebGL，甚至是命令行终端中的界面-->
+    <script>
+        new Vue({
+            el:"#app",
+            data(){
+                return {
+                    username: ""
+                }
+            }
+            // data:function () {
+            //     return{
+            //         username:""
+            //     }
+            // }
+        });
+    </script>
+
+</body>
+</html>
